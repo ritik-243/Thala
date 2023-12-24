@@ -1,0 +1,55 @@
+<html>
+<head>
+<style>
+  body {
+    background-color: black;
+  }
+  h1 {
+    color: yellow;
+    text-align: center;
+  }
+  #search-box {
+    display: block;
+    margin: 0 auto;
+  }
+  #check-button {
+    display: block;
+    margin: 0 auto;
+  }
+  #result {
+    color: white;
+    text-align: center;
+  }
+  #video {
+    display: none;
+    margin: 0 auto;
+  }
+</style>
+<script>
+  function check() {
+    var input = document.getElementById("search-box").value;
+    var result = document.getElementById("result");
+    var video = document.getElementById("video");
+    if (input.length == 7 || input == "7") {
+      result.innerHTML = "Thala";
+      video.style.display = "block";
+      video.play();
+    } else {
+      result.innerHTML = "Moye Moye";
+      video.style.display = "none";
+      video.pause();
+    }
+  }
+</script>
+</head>
+<body>
+<h1>Thala For A Reason!</h1>
+<input type="text" id="search-box" placeholder="Enter something...">
+<button id="check-button" onclick="check()">Check</button>
+<p id="result"></p>
+<video id="video" width="320" height="240" controls>
+  <source src="thala.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+</body>
+</html>
